@@ -11,23 +11,26 @@
 <body>
 	 <h1>Create Json Here</h1><br>
 
-	<form onsubmit= "return create_json(this);">
-	  Customer ID<input type ="text" name="id"><br><br>
-	  Date       <input type ="text" name="date"><br><br>
-	  Currency Type<input type ="text" name="type"><br><br>
-	  Total      <input type ="text" name = "total"><br><br>
+	<!-- <form onsubmit= "return create_json(this);"> -->
+	<form >
+	  Ref     <input type ="file" name="ref"><br><br>
+	  Date    <input type ="file" name="date"><br><br>
+	  Currency<input type ="file" name="currency"><br><br>
+	  Amount  <input type ="file" name = "amount"><br><br>
 	  	
-	  	 <input type= "submit" value= "Create JSON">
+	  	 <!-- <input type= "submit" value= "Create JSON"> -->
+	  	 <input type= "button" onclick="create_json(this)" value= "Create JSON">
 	</form>
 
 	
-	<pre id= "output"> </pre>
+	<span id= "output"> </span>
 	
 	  <script type="text/javascript">
 	
-	var  = document.getElementById("info");
+	/* var  = document.getElementById("info"); */
 	
 	function createJson(form)  {
+		console.log("this is " + form);
 		var json = {
 			"id": form.id.value,
 			"date": form.date.value,
@@ -35,7 +38,7 @@
 			"amount": form.amount.value
 		};
 		
-		var html= JSON.stringify(json, 0, 4);
+		var html= JSON.stringify(json);
 		document.getElementById('output').innerHTML = html;
 		return false;
 	}

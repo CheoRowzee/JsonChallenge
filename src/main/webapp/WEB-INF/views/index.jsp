@@ -11,17 +11,17 @@
 <body>
 	 <h1>Create Json Here</h1><br>
 
-	<!-- <form onsubmit= "return create_json(this);"> -->
-	<form >
-	  Ref     <input type ="file" name="ref"><br><br>
-	  Date    <input type ="file" name="date"><br><br>
-	  Currency<input type ="file" name="currency"><br><br>
-	  Amount  <input type ="file" name = "amount"><br><br>
+	
+	<form action = "submit">
+	  Ref     <input type ="text" name="ref"><br><br>
+	  Date    <input type ="text" name="date"><br><br>
+	  Currency<input type ="text" name="currency"><br><br>
+	  Amount  <input type ="text" name = "amount"><br><br>
 	  	
 	  	 <!-- <input type= "submit" value= "Create JSON"> -->
-	  	 <input type= "button" onclick="create_json(this)" value= "Create JSON">
+	  	 <input type= "button" onclick="createJson(this)" value= "Create JSON">
 	</form>
-
+	${json}
 	
 	<span id= "output"> </span>
 	

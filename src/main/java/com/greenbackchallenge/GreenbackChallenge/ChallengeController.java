@@ -21,13 +21,14 @@ public class ChallengeController {
 	}
 
 		@RequestMapping("/submit")
-		public ModelAndView submit(@RequestParam("ref") int ref, @RequestParam("date") String date, @RequestParam("currency") String currency, @RequestParam("amount") String amount) {
-		ArrayList<Input> input = new ArrayList<Input>();
+		public ModelAndView submit(@RequestParam("ref") String ref, @RequestParam("date") String date, @RequestParam("currency") String currency, @RequestParam("amount") String amount) {
+		Input input = new Input();
+		//List<Input> input = new ArrayList<Input>();
 		
-		((Input) input).setRef(ref);
-		input.add(date);
-		input.add(currency);
-		input.add(amount);
+		input.setRef(ref);
+		input.setDate(date);
+		input.setCurrency(currency);
+		input.setAmount(amount);
 		
 		return new ModelAndView("submit", "json", input);
 	}
